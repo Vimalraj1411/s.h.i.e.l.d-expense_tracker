@@ -1,0 +1,319 @@
+.title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-style: italic;
+    font-size: 24px;
+    z-index: 9999;
+    padding:8px 0;
+}
+
+.title h2{
+
+    margin:0;
+    padding:0;
+    justify-content: center;
+    align-items: center;
+    color: white
+
+}
+
+.title p{
+
+    margin:5px 0 0 0;
+    color:orange;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+body {
+    padding-top: 80px; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    background:linear-gradient(to right,rgb(247, 56, 56),rgb(54, 151, 241));
+    overflow: auto;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.expense-details {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.expense-details h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.expense-details table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.expense-details thead {
+    background-color: #4CAF50; 
+    color: white;
+    font-weight: bold;
+}
+
+
+.expense-details th, .expense-details td {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.2)    
+}
+
+.expense-details tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+.income-details {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.income-details h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    color:white
+}
+
+.income-details table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.income-details thead {
+    background-color: #4CAF50; 
+    color: white;
+    font-weight: bold;
+}
+
+
+.income-details th, .income-details td {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.income-details tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.income-details tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+}
+
+.income-container, .expense-container{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    width: 350px;
+}
+
+.income-container{
+
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+
+}
+
+.income-container h2,
+.expense-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white
+}
+
+input[type="number"], input[type="text"], input[type="date"], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    color:black
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled{
+
+    background-color: #555555;
+    color:#cccccc;
+    cursor:not-allowed;
+
+}
+
+.income-container button:first-of-type {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 9px
+}
+
+.income-container button:last-of-type {
+    background-color: #dc3545;
+    color: #fff;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.expense-container button:first-of-type {
+    background-color: #007bff;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.expense-container button:last-of-type {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.expense-container select{
+
+    font-size: 16px;
+    background-color: #f9f9f9;
+    padding:12px 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor:pointer
+}
+
+.expense-container label,p{
+
+    display: block;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+
+}
+
+.summary-details{
+
+    
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding:10px 10px;
+    width:50%;
+    margin-left: 25%;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.summary-details h3{
+
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+
+}
+
+.income-counter,.expense-counter{
+
+    padding:30px;
+    margin-top: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color:white;
+
+}
+
