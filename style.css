@@ -1,4 +1,4 @@
-
+/* General reset */
 body {
     margin: 0;
     padding-top: 80px;
@@ -35,8 +35,9 @@ html {
     margin: 0;
     padding: 0;
     color: white;
-    font-style: italic;
+    font-family: 'Orbitron',sans-serif;
     font-size: 24px;
+    text-shadow: 1px 1px 4px #000;
 }
 
 /* Main Layout */
@@ -95,11 +96,20 @@ html {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     width: 300px;
     color: white;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
 
-.income-container h2, .expense-container h2 {
+.income-container h2,
+.income-container h3,
+.expense-container h2,
+.expense-container h3{
+    justify-items: center;
     text-align: center;
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Raleway', sans-serif;
 }
 
 input[type="number"], input[type="text"], input[type="date"], select {
@@ -111,6 +121,7 @@ input[type="number"], input[type="text"], input[type="date"], select {
     font-size: 16px;
     background-color: #f9f9f9;
     color: black;
+
 }
 
 select {
@@ -242,3 +253,31 @@ footer {
     text-align: center;
     color: white;
 }
+
+#balanceAmt {
+    font-size: 22px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+    color: #00ffcc;
+    margin-top: 20px;
+    display: block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+#balanceAmt,#exCount,#inCount{
+    animation: pulse 2s infinite;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
