@@ -204,23 +204,11 @@ function validateExpenseForm(){
 }
 
 
-function summaryDetails(){
+function summaryDetails() {
+    summaryIncome.style.display = "none";
+    summaryExpense.style.display = "none";
 
-    summaryIncome.innerText="Total Income: "+totalIncome
-    summaryExpense.innerText="Total Expenses: "+totalExpense
-    
-    let balanceAmount=totalIncome-totalExpense;
-    
-    if(totalIncome===0 || totalExpense===0){
-
-        summaryBalance.style.display="none";
-    }
-    else{
-
-        summaryBalance.style.display="block"
-        summaryBalance.innerText="Balance Amount: "+balanceAmount
-
-    }
-    
-
+    let balanceAmount = totalIncome - totalExpense;
+    summaryBalance.style.display = "block";
+    summaryBalance.innerText = "💰 Balance: ₹" + balanceAmount;
 }
