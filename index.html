@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>S.H.I.E.L.D - Income & Expense Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway&family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
     <!--Header-->
     <header class="title">
-        <h2>S.H.I.E.L.D</h2>
+        <h2>SpendWise</h2>
     </header>
 
     <!--Main Container-->
@@ -19,12 +21,12 @@
         <!-- Left Side Counter -->
         <div class="left-panel">
             <div class="side-counters">
-                <div class="income-counter">
+                <div class="income-counter" id="inCount">
                     <h3>Credits ➕</h3>
                     <p id="incomeLabel">0</p>
                 </div>
 
-                <div class="expense-counter">
+                <div class="expense-counter" id="exCount">
                     <h3>Debits ➖</h3>
                     <p id="expenses">0</p>
                 </div>
@@ -92,10 +94,9 @@
         <!-- Summary Right Side -->
         <div class="right-panel">
             <div class="summary-details">
-                <h2>Summary</h2>
-                <h3 id="totalIncome">Total Income: </h3>
-                <h3 id="totalExpense">Total Expenses: </h3>
-                <h3 id="balanceAmt" style="display: none;">Balance Amount: </h3>
+                <h3 id="totalIncome" style="display: none;">Total Income: </h3>
+                <h3 id="totalExpense" style="display: none;">Total Expenses: </h3>
+                <h3 id="balanceAmt" style="display: block;">Balance Amount: </h3>
             </div>
         </div>
     </div>
