@@ -1,206 +1,132 @@
+/* General reset */
+body {
+    margin: 0;
+    padding-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, rgb(247, 56, 56), rgb(54, 151, 241));
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
 .title {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 70px;
-    background:rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    text-align: center;
-    justify-content: center;
     display: flex;
-    flex-direction: column;
-    font-style: italic;
-    font-size: 24px;
-    z-index: 9999;
-    padding:8px 0;
-}
-
-.title h2{
-
-    margin:0;
-    padding:0;
     justify-content: center;
     align-items: center;
-    color: white
-
+    z-index: 9999;
 }
 
-.title p{
+.title h2 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-style: italic;
+    font-size: 24px;
+}
 
-    margin:5px 0 0 0;
-    color:orange;
+/* Main Layout */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    margin: 30px auto;
+    align-items: center;
+}
+
+/* Left Panel Center Alignment */
+.left-panel {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    
+    align-items: center;
+    gap: 30px;
+    height: 100%;
 }
 
-body {
-    padding-top: 80px; 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: scroll;
-    background:linear-gradient(to right,rgb(247, 56, 56),rgb(54, 151, 241));
-    overflow: auto;
+.side-counters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-body::-webkit-scrollbar{
-    display: none;
-}
-
-.expense-details {
-    margin: 30px auto;
-    width: 90%;
-    max-width: 1000px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+.income-counter, .expense-counter {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.expense-details h2 {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-}
-
-.expense-details table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-}
-
-.expense-details thead {
-    background-color: #4CAF50; 
-    color: white;
-    font-weight: bold;
-}
-
-
-.expense-details th, .expense-details td {
-    padding: 15px 20px;
     text-align: center;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.2)    
+    width: 120px;
 }
 
-.expense-details tbody tr:hover {
-    background-color: #f1f1f1;
-    transition: 0.3s;
-}
-
-.income-details {
-    margin: 30px auto;
-    width: 90%;
-    max-width: 1000px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-}
-
-.income-details h2 {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom: 20px;
-    color:white
-}
-
-.income-details table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-}
-
-.income-details thead {
-    background-color: #4CAF50; 
-    color: white;
-    font-weight: bold;
-}
-
-
-.income-details th, .income-details td {
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 16px;
-    border-bottom: 1px solid #ddd;
-    
-}
-
-.income-details tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.income-details tbody tr:hover {
-    background-color: #f1f1f1;
-    transition: 0.3s;
+/* Middle Panel */
+.middle-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 50px auto;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
 }
 
-.income-container, .expense-container{
-    background: rgba(255,255,255,0.15);
+.income-container, .expense-container {
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    padding: 30px 40px;
+    padding: 20px 30px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    width: 350px;
-}
-
-.income-container{
-
-    display: block;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 300px;
     color: white;
-
 }
 
-.income-container h2,
-.expense-container h2 {
+.income-container h2, .expense-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:white
 }
 
 input[type="number"], input[type="text"], input[type="date"], select {
     width: 100%;
-    padding: 12px 15px;
+    padding: 12px 8px;
     margin: 8px 0 20px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
     background-color: #f9f9f9;
-    box-sizing: border-box;
-    color:black
+    color: black;
 }
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    
+}
+
+select #expenseCat{
+
+    padding: 12px 8px;
+
+}
+
 
 button {
     padding: 12px 20px;
@@ -215,35 +141,27 @@ button:hover {
     opacity: 0.9;
 }
 
-button:disabled{
-
-    background-color: #555555;
-    color:#cccccc;
-    cursor:not-allowed;
-
+button:disabled {
+    background-color: #555;
+    color: #ccc;
+    cursor: not-allowed;
 }
 
 .income-container button:first-of-type {
     background-color: #28a745;
     color: #fff;
     margin-right: 10px;
-    margin-left: 9px
 }
 
 .income-container button:last-of-type {
     background-color: #dc3545;
     color: #fff;
-    
-}
-
-html{
-    scroll-behavior: smooth;
 }
 
 .expense-container button:first-of-type {
     background-color: #007bff;
     color: #fff;
-    margin-left: 10px;
+    /* margin-right: 5px; */
 }
 
 .expense-container button:last-of-type {
@@ -251,69 +169,76 @@ html{
     color: #fff;
 }
 
-.expense-container select{
-
-    font-size: 16px;
-    background-color: #f9f9f9;
-    padding:12px 15px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor:pointer
-}
-
-.expense-container label,p{
-
-    display: block;
+/* Right Panel Center Alignment */
+.right-panel {
+    display: flex;
     justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-
+    align-items: center;
+    height: 100%;
 }
 
-.summary-details{
-
-    
+.summary-details {
     text-align: center;
-    justify-content:center;
-    align-items: center;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding:10px 10px;
-    width:50%;
-    margin-left: 25%;
-    color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    padding: 20px 30px;
+    width: 200px;
+    color: white;
 }
 
-.summary-details h3{
-
-    color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    justify-content:center;
-    align-items: center;
-
-}
-
-.income-counter,.expense-counter{
-
-    padding:30px;
-    margin-top: 200px;
+/* Tables Styling */
+.income-details, .expense-details {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    color:white;
-
 }
 
+.income-details h2, .expense-details h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+thead {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
