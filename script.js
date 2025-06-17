@@ -164,51 +164,61 @@ function validateIncomeForm(){
 
 function validateExpenseForm(){
     
-    const date=dateAdder.value.trim();
-    const payeee=payeeName.value.trim();
-    const category=expCategory.value.trim();
-    const amount=expAmt.value.trim();
-    const warning=document.getElementById("expenseWarning");
-    const balanceWarning=document.getElementById("balanceWarning")
+    const date = dateAdder.value.trim();
+    const payeee = payeeName.value.trim();
+    const category = expCategory.value.trim();
+    const amount = expAmt.value.trim();
+    const warning = document.getElementById("expenseWarning");
+    const balanceWarning = document.getElementById("balanceWarning");
+    const balanceCheck = document.getElementById("balanceCheck");
 
-    if(date===""|| payeee===""|| category===""||amount===""){
-        warning.style.display="block";
+    if(date === "" || payeee === "" || category === "" || amount === ""){
+        warning.style.display = "block";
         error.play();
 
-        setTimeout(()=>{
-            warning.style.display="none";
-            
-        },3000);
+        setTimeout(() => {
+            warning.style.display = "none";
+        }, 3000);
         return false;
     }
-    else{
 
-        warning.style.display="none";
+    const expenseAmount = parseFloat(amount);
+    const currentBalance = totalIncome - totalExpense;
 
-        if(totalIncome===0){
+    if(expenseAmount > currentBalance){
+        balanceCheck.style.display = "block";
+        error.play();
 
-            balanceWarning.style.display="block";
-
-            setTimeout(()=>{
-                balanceWarning.style.display="none";
-
-            },3000)
-        }
-
-        else{
-
-            calculateExpense();
-
-        }
+        setTimeout(() => {
+            balanceCheck.style.display = "none";
+        }, 3000);
+        return false;  
     }
+
+    warning.style.display = "none";
+    calculateExpense();  
 }
+
 
 
 function summaryDetails() {
     summaryIncome.style.display = "none";
     summaryExpense.style.display = "none";
+    const balanceWarning=document.getElementById("balanceCheck")
 
     let balanceAmount = totalIncome - totalExpense;
-    summaryBalance.style.display = "block";
-    summaryBalance.innerText = "💰 Balance: ₹" + balanceAmount;
+
+    if(balanceAmount<totalExpense){
+
+        balanceWarning.style.display="block";
+
+        setTimeout(()=>{
+            balanceWarning.style.display="none";
+        },3000)
+    }
+    
+    else{
+
+        summaryBalance.innerText = "💰 Balance: ₹" + balanceAmount;
+    }
 }
