@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>S.H.I.E.L.D - Income & Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Header-->
+    <header class="title">
+        <h2>SpendWise</h2>
+    </header>
+
+    <!--Main Container-->
+    <div class="main-container">
+
+        <!-- Left Side Counter -->
+        <div class="left-panel">
+            <div class="side-counters">
+                <div class="income-counter" id="inCount">
+                    <h3>Credits ➕</h3>
+                    <p id="incomeLabel">0</p>
+                </div>
+
+                <div class="expense-counter" id="exCount">
+                    <h3>Debits ➖</h3>
+                    <p id="expenses">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Income & Expense Forms -->
+        <div class="middle-panel">
+            <div class="container">
+
+                <!-- Income -->
+                <div class="income-container">
+                    <h2>Income Calculator</h2>
+
+                    <label for="payer-name">Source</label>
+                    <input type="text" class="payer-name" id="src">
+
+                    <label for="amtDate">Date</label>
+                    <input type="date" id="amtDate">
+
+                    <label for="amtNote">Notes</label>
+                    <input type="text" id="amtNote">
+
+                    <label for="incomeBox">Amount</label>
+                    <input type="number" class="incomeBox" id="incomeAmt">
+
+                    <p id="incomeWarning" style="color:red;display: none">Please fill out the required details 🚫</p>
+                    <button onClick="validateIncomeForm()">Add Income</button>
+                    <button id="incomeDetailsBtn" onClick="showDetails('income'); location.href='#income-details'" disabled>Income Details</button>
+                </div>
+
+                <!-- Expense -->
+                <div class="expense-container">
+                    <h2>Expense Calculator</h2>
+
+                    <label for="expenseDate">Date</label>
+                    <input type="date" id="expenseDate">
+
+                    <label for="payeeID">Payee</label>
+                    <input type="text" id="payeeID">
+
+                    <label for="category">Category</label>
+                    <select name="category" id="expenseCat">
+                        <option value="select">Select Category</option>
+                        <option value="food">Food & Drinks 🍜</option>
+                        <option value="shop">Shopping 🛒</option>
+                        <option value="housing">Rent 🏘</option>
+                        <option value="loan">Loan 💰</option>
+                        <option value="vehicle">Vehicle 🚗</option>
+                        <option value="invest">Investments 📈</option>
+                        <option value="other">Others 📦</option>
+                    </select>
+
+                    <label for="expenseAmt">Amount</label>
+                    <input type="number" id="expenseAmt">
+
+                    <p id="balanceWarning" style="color:red;display: none;">No Sufficient Balance</p>
+                    <p id="expenseWarning" style="color:red;display: none">Please fill out the required details 🚫</p>
+                    <button onClick="validateExpenseForm()">Add Expense</button>
+                    <button id="expenseDetailsBtn" onClick="showDetails('expense'); location.href='#expense-details'" disabled>Expense Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Right Side -->
+        <div class="right-panel">
+            <div class="summary-details">
+                <p id="balanceCheck" style="display: none;">No Sufficient Balance</p>
+                <h3 id="totalIncome" style="display: none;">Total Income: </h3>
+                <h3 id="totalExpense" style="display: none;">Total Expenses: </h3>
+                <h3 id="balanceAmt" style="display: block;">Balance Amount: </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Income Table -->
+    <div class="income-details" id="income-details" style="display: none;">
+        <h2>Income Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Source</th>
+                    <th>Date</th>
+                    <th>Notes</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="incomeTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Expense Table -->
+    <div class="expense-details" id="expense-details" style="display: none;">
+        <h2>Expense Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Date</th>
+                    <th>Payee</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="expenseTable"></tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2025 Vimalraj S. All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
