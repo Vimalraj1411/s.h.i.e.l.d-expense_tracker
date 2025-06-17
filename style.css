@@ -16,6 +16,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /* Header */
 .title {
     position: fixed;
@@ -112,8 +113,8 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 
-input[type="number"], input[type="text"], input[type="date"], select {
-    width: 100%;
+input[type="number"], input[type="text"], input[type="date"],select{
+    width: 95%;
     padding: 12px 8px;
     margin: 8px 0 20px 0;
     border: 1px solid #ccc;
@@ -132,9 +133,10 @@ select {
     
 }
 
-select #expenseCat{
+#expenseCat{
 
     padding: 12px 8px;
+    width: 95%;
 
 }
 
